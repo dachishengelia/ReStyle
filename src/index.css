@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@keyframes marquee-fast {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee-fast {
+    animation: marquee-fast 12s linear infinite;
+  }
+  
+  @keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+  }
+  
+ 
