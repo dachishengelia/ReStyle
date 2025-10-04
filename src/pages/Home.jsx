@@ -37,13 +37,13 @@ export default function Home({ favorites, toggleFav }) {
 
       <div className="flex flex-col md:flex-row items-center justify-between bg-gray-900 text-white h-[500px] md:h-[600px] px-6 md:px-20">
         <img
-           src="https://st.depositphotos.com/2251265/2416/i/450/depositphotos_24169953-stock-photo-man-without-head-isolated-on.jpg"
+          src="https://picsum.photos/seed/splash/400/400"
           alt="Cloth"
           className="w-full md:w-1/2 h-full object-cover rounded-lg"
         />
         <div className="md:w-1/2 mt-6 md:mt-0 md:ml-12">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">ReStyle</h1>
-          <p className="text-xl md:text-2xl font-medium">Where fashion meets savings.</p>
+          <p className="text-xl md:text-2xl font-medium">"Where fashion meets savings."</p>
         </div>
       </div>
 
