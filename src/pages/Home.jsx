@@ -32,7 +32,7 @@ export default function Home({ favorites, toggleFav }) {
 
       <div className="flex flex-col md:flex-row items-center justify-between bg-gray-900 text-white h-[500px] md:h-[600px] px-6 md:px-20">
         <img
-          src="https://picsum.photos/seed/splash/400/400"
+           src="https://st.depositphotos.com/2251265/2416/i/450/depositphotos_24169953-stock-photo-man-without-head-isolated-on.jpg"
           alt="Cloth"
           className="w-full md:w-1/2 h-full object-cover rounded-lg"
         />
