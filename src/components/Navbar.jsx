@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext'
+import logo from "../public/logo.png";
 
 export default function Navbar() {
   const { user, logout } = useContext(AuthContext)
@@ -9,7 +10,9 @@ export default function Navbar() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-20">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link to="/" className="font-bold text-2xl">ReStyle</Link>
+       <Link to="/" className="flex items-center gap-2 font-bold text-2xl">
+        <img src={logo} alt="logo" className="w-[70px] h-[70px]" />ReStyle</Link>
+
 
         <nav className="flex items-center gap-4">
           <Link to="/" className="text-sm">Home</Link>
