@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Favorites from './pages/Favorites';
-import Auth from './pages/Auth';
-import DiscountFeed from './pages/DiscountFeed';
-import Secondhand from './pages/Secondhand';
-import { AuthProvider } from './context/AuthContext';
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
+import Home from './pages/Home.jsx';
+import Favorites from './pages/Favorites.jsx';
+import Auth from './pages/Auth.jsx';
+import DiscountFeed from './pages/DiscountFeed.jsx';
+import Secondhand from './pages/Secondhand.jsx';
+import { AuthProvider } from './context/AuthContext.jsx';
 
 export default function App() {
   const [favorites, setFavorites] = useState(() => {
