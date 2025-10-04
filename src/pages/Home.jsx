@@ -24,14 +24,15 @@ export default function Home({ favorites, toggleFav }) {
 
   const firstFour = filtered.slice(0, 4);
 
-  const brands = ["Zara", "H&M", "New Yorker", "Waikiki", "Mango", "Nike", "Adidas", "Uniqlo", "Puma", "Levis"];
+  const brands = ["Zara", "H&M", "New Yorker", "Waikiki", "Mango", "Nike", "Adidas", "Uniqlo", "Puma", "Levis","Zara", "H&M", "New Yorker", "Waikiki", "Mango", "Nike", "Adidas", "Uniqlo", "Puma", "Levis"];
+ 
 
   return (
     <div className="w-full">
 
       <div className="flex flex-col md:flex-row items-center justify-between bg-gray-900 text-white h-[500px] md:h-[600px] px-6 md:px-20">
         <img
-          src="\https://picsum.photos/seed/splash/400/400"
+          src="https://picsum.photos/seed/splash/400/400"
           alt="Cloth"
           className="w-full md:w-1/2 h-full object-cover rounded-lg"
         />
@@ -74,18 +75,38 @@ export default function Home({ favorites, toggleFav }) {
 
 
       {filterOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/30">
-          <div className="bg-white p-6 rounded shadow-lg w-11/12 md:w-1/3 relative">
-            <button
-              onClick={() => setFilterOpen(false)}
-              className="absolute top-2 right-2 text-gray-500 font-bold"
-            >
-              ×
-            </button>
-            <Filters filters={filters} setFilters={setFilters} />
-          </div>
-        </div>
-      )}
+
+<div className="fixed inset-0 flex items-center justify-center z-50 bg-black/30">
+
+<div className="bg-white p-6 rounded shadow-lg w-11/12 md:w-1/3 relative">
+
+<button
+
+onClick={() => setFilterOpen(false)}
+
+className="absolute top-2 right-2 text-gray-500 font-bold"
+
+>
+
+×
+
+</button>
+
+<Filters
+
+filters={filters}
+
+setFilters={setFilters}
+
+close={() => setFilterOpen(false)} 
+
+/>
+
+</div>
+
+</div>
+
+)}
 
 
       {["Hot", "New", "Top Sales", "Biggest Discount"].map((section, idx) => (
