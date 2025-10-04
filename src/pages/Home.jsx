@@ -24,8 +24,13 @@ export default function Home({ favorites, toggleFav }) {
 
   const firstFour = filtered.slice(0, 4);
 
-  const brands = ["Zara", "H&M", "New Yorker", "Waikiki", "Mango", "Nike", "Adidas", "Uniqlo", "Puma", "Levis","Zara", "H&M", "New Yorker", "Waikiki", "Mango", "Nike", "Adidas", "Uniqlo", "Puma", "Levis"];
- 
+  const brands = [
+    "Zara", "H&M", "New Yorker", "Waikiki", "Mango", "Nike", "Adidas", "Uniqlo", "Puma", "Levis",
+    "Zara", "H&M", "New Yorker", "Waikiki", "Mango", "Nike", "Adidas", "Uniqlo", "Puma", "Levis",
+    "Zara", "H&M", "New Yorker", "Waikiki", "Mango", "Nike", "Adidas", "Uniqlo", "Puma", "Levis",
+    "Zara", "H&M", "New Yorker", "Waikiki", "Mango", "Nike", "Adidas", "Uniqlo", "Puma", "Levis"
+  ];
+  
 
   return (
     <div className="w-full">
