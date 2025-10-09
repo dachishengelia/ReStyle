@@ -3,47 +3,124 @@ import ProductCard from "../components/ProductCard";
 import Filters from "../components/Filters";
 import products from "../data/products";
 
-
-
 export default function Home({ favorites, toggleFav }) {
   const [query, setQuery] = useState("");
   const [filters, setFilters] = useState({});
   const [filterOpen, setFilterOpen] = useState(false);
-
 
   const filtered = products.filter((p) => {
     const matchesQuery = p.title.toLowerCase().includes(query.toLowerCase());
     const matchesCategory = !filters.category || p.category === filters.category;
     const matchesColor = !filters.color || p.color === filters.color;
     const matchesSize = !filters.size || p.size.includes(filters.size);
-    const matchesPrice = !filters.maxPrice || p.price <= parseInt(filters.maxPrice);
-    const matchesDiscount = !filters.minDiscount || p.discount >= parseInt(filters.minDiscount);
-    return matchesQuery && matchesCategory && matchesColor && matchesSize && matchesPrice && matchesDiscount;
-  });
+    const matchesPrice =
+      !filters.maxPrice || p.price <= parseInt(filters.maxPrice);
+    const matchesDiscount =
+      !filters.minDiscount || p.discount >= parseInt(filters.minDiscount);
 
+    return (
+      matchesQuery &&
+      matchesCategory &&
+      matchesColor &&
+      matchesSize &&
+      matchesPrice &&
+      matchesDiscount
+    );
+  });
 
   const firstFour = filtered.slice(0, 4);
 
   const brands = [
-    "Zara", "H&M", "New Yorker", "Waikiki", "Mango", "Nike", "Adidas", "Uniqlo", "Puma", "Levis",
-    "Zara", "H&M", "New Yorker", "Waikiki", "Mango", "Nike", "Adidas", "Uniqlo", "Puma", "Levis",
-    "Zara", "H&M", "New Yorker", "Waikiki", "Mango", "Nike", "Adidas", "Uniqlo", "Puma", "Levis",
-    "Zara", "H&M", "New Yorker", "Waikiki", "Mango", "Nike", "Adidas", "Uniqlo", "Puma", "Levis"
+    "Zara",
+    "H&M",
+    "New Yorker",
+    "Waikiki",
+    "Mango",
+    "Nike",
+    "Adidas",
+    "Uniqlo",
+    "Puma",
+    "Levis",
+    "Zara",
+    "H&M",
+    "New Yorker",
+    "Waikiki",
+    "Mango",
+    "Nike",
+    "Adidas",
+    "Uniqlo",
+    "Puma",
+    "Levis",
+    "Zara",
+    "H&M",
+    "New Yorker",
+    "Waikiki",
+    "Mango",
+    "Nike",
+    "Adidas",
+    "Uniqlo",
+    "Puma",
+    "Levis",
+    "Zara",
+    "H&M",
+    "New Yorker",
+    "Waikiki",
+    "Mango",
+    "Nike",
+    "Adidas",
+    "Uniqlo",
+    "Puma",
+    "Levis",
+    "Zara",
+    "H&M",
+    "New Yorker",
+    "Waikiki",
+    "Mango",
+    "Nike",
+    "Adidas",
+    "Uniqlo",
+    "Puma",
+    "Levis",
+    "Zara",
+    "H&M",
+    "New Yorker",
+    "Waikiki",
+    "Mango",
+    "Nike",
+    "Adidas",
+    "Uniqlo",
+    "Puma",
+    "Levis",
   ];
-  
 
   return (
     <div className="w-full">
 
-      <div className="flex flex-col md:flex-row items-center justify-between bg-gray-900 text-white h-[500px] md:h-[600px] px-6 md:px-20">
-        <img
-          src="https://picsum.photos/seed/splash/400/400"
-          alt="Cloth"
-          className="w-full md:w-1/2 h-full object-cover rounded-lg"
-        />
-        <div className="md:w-1/2 mt-6 md:mt-0 md:ml-12">
+      <div
+        className="flex flex-col md:flex-row items-center justify-between
+                   bg-gray-900 text-white h-[500px] md:h-[600px] px-6 md:px-20
+                   relative overflow-hidden"
+      >
+
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('/splash.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            opacity: 0.8, 
+          }}
+        ></div>
+
+
+        <div className="absolute inset-0 bg-gray-900/70"></div>
+
+
+        <div className="relative z-10 md:w-1/2 mt-6 md:mt-0 md:ml-12">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">ReStyle</h1>
-          <p className="text-xl md:text-2xl font-medium">"Where fashion meets savings."</p>
+          <p className="text-xl md:text-2xl font-medium">
+            "Where fashion meets savings."
+          </p>
         </div>
       </div>
 
@@ -80,38 +157,22 @@ export default function Home({ favorites, toggleFav }) {
 
 
       {filterOpen && (
-
-<div className="fixed inset-0 flex items-center justify-center z-50 bg-black/30">
-
-<div className="bg-white p-6 rounded shadow-lg w-11/12 md:w-1/3 relative">
-
-<button
-
-onClick={() => setFilterOpen(false)}
-
-className="absolute top-2 right-2 text-gray-500 font-bold"
-
->
-
-×
-
-</button>
-
-<Filters
-
-filters={filters}
-
-setFilters={setFilters}
-
-close={() => setFilterOpen(false)} 
-
-/>
-
-</div>
-
-</div>
-
-)}
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/30">
+          <div className="bg-white p-6 rounded shadow-lg w-11/12 md:w-1/3 relative">
+            <button
+              onClick={() => setFilterOpen(false)}
+              className="absolute top-2 right-2 text-gray-500 font-bold"
+            >
+              ×
+            </button>
+            <Filters
+              filters={filters}
+              setFilters={setFilters}
+              close={() => setFilterOpen(false)}
+            />
+          </div>
+        </div>
+      )}
 
 
       {["Hot", "New", "Top Sales", "Biggest Discount"].map((section, idx) => (

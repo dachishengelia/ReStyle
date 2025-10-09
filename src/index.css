@@ -8,7 +8,7 @@
 .animate-marquee-fast {
   display: flex;
   width: max-content;
-  animation: marquee-fast 35s linear infinite;
+  animation: marquee-fast 60s linear infinite;
   will-change: transform;
 }
 
