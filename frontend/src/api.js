@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'https://re-style-backend.vercel.app',
+  baseURL: 're-style-backend.vercel.app', 
 });
 
 export const registerUser = (data) => API.post('/auth/register', data);
