@@ -1,4 +1,3 @@
-// src/context/AuthContext.jsx
 import React, { createContext, useState } from "react";
 import { loginUser, registerUser } from "../api.js";
 
