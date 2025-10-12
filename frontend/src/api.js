@@ -1,8 +1,8 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API = axios.create({
-  baseURL: 'https://re-style-backend.vercel.app/api', 
-});
 
-export const registerUser = (data) => API.post('/auth/register', data);
-export const loginUser = (data) => API.post('/auth/login', data);
+const API_URL = "https://re-style-backend.onrender.com/api/auth";
+
+
+export const loginUser = (data) => axios.post(`${API_URL}/login`, data);
+export const registerUser = (data) => axios.post(`${API_URL}/register`, data);
